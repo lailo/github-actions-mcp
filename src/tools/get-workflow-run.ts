@@ -35,9 +35,7 @@ const inputSchema = z.object({
     .describe("Number of results per page"),
 })
 
-type InputSchema = z.infer<typeof inputSchema>
-
-async function handle(args: InputSchema) {
+async function handle(args: unknown) {
   const { owner, repo, workflow_id, status, conclusion, per_page } =
     inputSchema.parse(args)
 

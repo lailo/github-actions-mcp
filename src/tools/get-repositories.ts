@@ -8,9 +8,7 @@ const inputSchema = z.object({
   username: z.string().describe("GitHub username"),
 })
 
-type InputSchema = z.infer<typeof inputSchema>
-
-async function handle(args: InputSchema) {
+async function handle(args: unknown) {
   const { username } = inputSchema.parse(args)
 
   try {

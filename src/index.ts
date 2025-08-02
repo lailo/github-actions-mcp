@@ -10,10 +10,6 @@ import getRepositories from "./tools/get-repositories"
 const server = new McpServer({
   name: "github-actions-mcp",
   version: "1.0.0",
-  capabilities: {
-    resources: {},
-    tools: {},
-  },
 })
 
 server.tool(

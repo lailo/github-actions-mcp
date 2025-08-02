@@ -10,9 +10,7 @@ const inputSchema = z.object({
   run_id: z.number().describe("Workflow run ID"),
 })
 
-type InputSchema = z.infer<typeof inputSchema>
-
-async function handle(args: InputSchema) {
+async function handle(args: unknown) {
   const { owner, repo, run_id } = inputSchema.parse(args)
 
   try {
