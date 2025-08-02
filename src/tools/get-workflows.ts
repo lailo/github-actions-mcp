@@ -9,9 +9,7 @@ const inputSchema = z.object({
   repo: z.string().describe("GitHub repository name"),
 })
 
-type InputSchema = z.infer<typeof inputSchema>
-
-async function handle(args: InputSchema) {
+async function handle(args: unknown) {
   const { owner, repo } = inputSchema.parse(args)
 
   try {
